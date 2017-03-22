@@ -1,4 +1,4 @@
-package com.fiuba.apredazzi.tp_taller_de_programacion_2_android.activities;
+package activities;
 
 import android.app.Activity;
 import android.content.Intent;

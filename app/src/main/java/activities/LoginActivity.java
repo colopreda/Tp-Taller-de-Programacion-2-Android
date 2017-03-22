@@ -1,9 +1,8 @@
-package com.fiuba.apredazzi.tp_taller_de_programacion_2_android.activities;
+package activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -23,7 +22,6 @@ import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 import com.facebook.login.widget.ProfilePictureView;
 import com.fiuba.apredazzi.tp_taller_de_programacion_2_android.R;
-import com.facebook.FacebookSdk;
 import org.json.JSONException;
 
 public class LoginActivity extends AppCompatActivity {
@@ -113,6 +111,7 @@ public class LoginActivity extends AppCompatActivity {
                     R.string.success,
                     Toast.LENGTH_LONG).show();
                 updateUI();
+                goToMainActivity();
             }
 
             @Override
@@ -142,6 +141,11 @@ public class LoginActivity extends AppCompatActivity {
                 updateUI();
             }
         };
+    }
+
+    private void goToMainActivity() {
+        Intent i = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(i);
     }
 
     private boolean isLoggedIn() {
